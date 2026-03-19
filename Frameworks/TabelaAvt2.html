@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Tabela com Validações</title>
+    <link rel="stylesheet" href="estiloTabela.css">
+</head>
+<body>
+    <!-- Exemplo 1: Tabela válida com colspan -->
+    <tabela linha="3" coluna="3" borda="2px solid blue">
+        <expand linha="0" coluna="0" tamanho="2" tipo="coluna"></expand>
+        <expand linha="1" coluna="2" tamanho="2" tipo="linha"></expand>
+        <dados>1</dados>
+        <dados>2</dados>
+        <dados>3</dados>
+    </tabela>
+
+    <!-- Exemplo 2: Tabela válida sem expands -->
+    <tabela linha="2" coluna="2" borda="3px dotted red">
+        <dados>A</dados>
+        <dados>B</dados>
+        <dados>C</dados>
+        <dados>D</dados>
+    </tabela>
+
+    <!-- Exemplo 3: Tabela válida sem dados -->
+    <tabela linha="2" coluna="3" borda="1px solid black"></tabela>
+
+    <!-- Exemplo 4: Tabela inválida (sem linhas e colunas) -->
+    <tabela borda="1px solid black"></tabela>
+
+    <!-- Exemplo 5: Tabela inválida (colspan incompatível) -->
+    <tabela linha="2" coluna="2" borda="1px solid black">
+        <expand linha="0" coluna="1" tamanho="3" tipo="coluna"></expand>
+    </tabela>
+
+    <!-- Exemplo 6: Tabela inválida (mais dados que células) -->
+    <tabela linha="2" coluna="2" borda="1px solid black">
+        <dados>1</dados>
+        <dados>2</dados>
+        <dados>3</dados>
+        <dados>4</dados>
+        <dados>5</dados>
+    </tabela>
+
+    <script src="fwkTabela_colspan_validado.js"></script>
+</body>
+</html>
